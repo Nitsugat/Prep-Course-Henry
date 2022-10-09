@@ -118,8 +118,8 @@ function obtenerResto(x, y) {
   // Obten el resto de la división de "x" entre "y"
   // Tu código:
 
-  let mod = x % y ;
-  return mod;
+  x = x % y ;
+  return x;
 
 }
 
@@ -128,9 +128,9 @@ function esPar(num) {
   // De lo contrario, devuelve "false"
   // Tu código:
 
-  let mod = num % 2;
+  num = num % 2;
 
-if (mod == 0) {
+if (num == 0) {
 
   return true;
 }
@@ -160,6 +160,9 @@ function elevarAlCuadrado(num) {
   // Devuelve el valor de "num" elevado al cuadrado
   // ojo: No es raiz cuadrada!
   // Tu código:
+
+  num = num^2;
+  return num;
 
 }
 
