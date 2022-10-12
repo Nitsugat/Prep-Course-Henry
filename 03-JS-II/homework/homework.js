@@ -20,7 +20,7 @@ function mayoriaDeEdad(edad) {
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
 
-  if (edad < 18) {
+  if (edad >= 18) {
     return "Allowed";
   } else {
     return "Not allowed";
@@ -118,9 +118,9 @@ function estaEnRango(numero) {
   // Tu código:
 
   if (numero < 50 & numero > 20) {
-    true;
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
@@ -133,7 +133,7 @@ function esEntero(numero) {
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
 
-  aux = Math.floor(num);
+  aux = Math.floor(numero);
   if (numero != aux) {
     return false;
   } else {
@@ -148,18 +148,17 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
 
-  if (numero % 3 == 0) {
-    return "fizz";
+  if (numero % 3 == 0 & numero % 5 == 0) {
 
-  } else if (numero % 3 == 0 & numero % 5 == 0) {
-
-   return "fizzbuzz";
+    return "fizzbuzz";
 
   } else if (numero % 5 == 0) {
 
     return "buzz";
 
-  }else{
+  } else if (numero % 3 == 0) {
+    return "fizz";
+  } else {
     return numero;
   }
 
@@ -175,18 +174,20 @@ function operadoresLogicos(num1, num2, num3) {
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
 
-if (num1 < 0 | num2 <0 | num3 < 0) {
-  return "Hay negativos";
-}else if(num1 == 0 | num2 == 0 | num3 == 0){
-  return "Error"
-}
+  if (num1 < 0 | num2 < 0 | num3 < 0) {
+    return "Hay negativos";
+  } else if (num1 == 0 | num2 == 0 | num3 == 0) {
+    return "Error"
+  }
 
-if (num1 > num2 & num1 > num3) {
-  return "Número 1 es mayor y positivo";
+  if (num1 > num2 & num1 > num3) {
+    return "Número 1 es mayor y positivo";
 
-} else if(num3 > num2 & num3 > num1){
-  return num3 + 1;
-}
+  } else if (num3 > num2 & num3 > num1) {
+    return num3 + 1;
+  } else {
+    return false;
+  }
 
 
 
@@ -200,7 +201,7 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
- 
+
   if (numero == 1 | numero == 0) {
     return false;
   }
@@ -216,7 +217,7 @@ function esPrimo(numero) {
 
   }
 
-  return true;
+  return aux;
 
 
 }
@@ -241,14 +242,15 @@ function tablaDelSeis() {
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
- let array = [];
+  let array = [];
 
+  for (let i = 0; i <= 10; i++) {
 
-
-  for (let i = 0; i == 60 ; i++) {
-    
-    array.push((i*6));
+   array[i] = (i*6);
+   
   }
+
+
   return array;
 }
 
@@ -256,21 +258,28 @@ function tieneTresDigitos(numero) {
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
 
-  if (numero > 99 & numero< 1000) {
+
+  if (numero > 99 & numero < 1000) {
     return true;
+  } else {
+    return false;
   }
-  return false;
+
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
- 
 
-  numero = numero + 5*8;
+  let count = 0;
+  do {
+    count += 1;
+    numero += 5;
 
-  return numero ;
+  } while (count < 8)
+
+  return numero;
 
 }
 
