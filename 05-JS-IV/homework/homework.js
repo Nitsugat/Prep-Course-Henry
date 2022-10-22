@@ -6,6 +6,21 @@ function crearGato (nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
+
+  const gato = {
+
+    nombre:nombre,
+    edad:edad,
+
+     meow: function(){
+
+      return "Meow!"
+     }
+  }
+
+  return gato;
+
+
 }
 
 function agregarPropiedad (objeto, property) {
@@ -13,6 +28,16 @@ function agregarPropiedad (objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
+
+  objeto={
+    property: null,
+  }
+
+  //objeto.property=null;
+
+  return objeto;
+
+
 }
 
 function invocarMetodo (objeto, metodo) {
@@ -20,6 +45,8 @@ function invocarMetodo (objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
+   
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) {
@@ -27,6 +54,8 @@ function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) {
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
 
+  let result = objetoMisterioso.numeroMisterioso * 5;
+  return result;
 }
 
 function eliminarPropiedad (objeto, unaPropiedad) {
